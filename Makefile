@@ -1,3 +1,5 @@
+NAME := cub3d
+
+
 all: main.c
-	cc -Iminilibx-linux ft_split.c main.c  -Lminilibx-linux -lX11 -lXext -lmlx_Linux
-	
+	cc main.c -Lminilibx-linux -lmlx_Linux -lz -lXext -lm -lX11 -g -o $(NAME)
