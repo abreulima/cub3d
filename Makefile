@@ -1,5 +1,14 @@
 NAME := cub3d
+LDFLAGS := -Iinc
+
+SRCS := src/main.c
+SRCS += src/image_manager.c
+SRCS += src/key_manager.c
+##SRCS += src/entities/entity.
+SRCS += src/systems/keyboard.c
+SRCS += src/systems/movement.c
+SRCS += src/systems/render.c
 
 
-all: main.c
-	cc main.c -Lminilibx-linux -lmlx_Linux -lz -lXext -lm -lX11 -g -o $(NAME)
+all: $(SRCS)
+	cc $(LDFLAGS) $^ -Lminilibx-linux -lmlx_Linux -lz -lXext -lm -lX11 -g -o $(NAME)

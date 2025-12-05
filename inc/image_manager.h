@@ -1,5 +1,14 @@
-#ifndef IMAGES_H
-#define IMAGES_H
+#ifndef IMAGE_MANAGER_H
+# define IMAGE_MANAGER_H
+
+typedef struct s_mlx t_mlx;
+
+typedef struct  s_image_data
+{
+    void        *ptr;
+    int         height;
+    int         width;
+}               t_image_data;
 
 typedef enum    e_images
 {
@@ -13,5 +22,7 @@ typedef enum    e_images
                 BT_PLAY,
                 BT_PLAY_HOVER,
 }               t_images;
+
+t_image_data image_loader(t_mlx *mlx, char *path);
 
 #endif
