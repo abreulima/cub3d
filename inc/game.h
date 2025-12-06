@@ -23,14 +23,14 @@ typedef struct      s_scenes
 
 }                   t_scenes;
 
-typedef struct s_mlx
+typedef struct      s_mlx
 {
-    void        *mlx;
-    void        *window;
-    void        *frame;
-    bool        keys[65536];
-    t_game      *game;
-}               t_mlx;
+    void            *mlx;
+    void            *window;
+    t_image_data    frame;
+    bool            keys[65536];
+    t_game          *game;
+}                   t_mlx;
 
 void	*ft_calloc(size_t nmemb, size_t size);
 

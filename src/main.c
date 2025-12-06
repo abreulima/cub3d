@@ -25,16 +25,20 @@ int main()
 
     mlx.mlx = mlx_init();
     mlx.window = mlx_new_window(mlx.mlx, 800, 600, "cub3d");
-    mlx.frame = mlx_new_image(mlx.mlx, 800, 600);
+
+    mlx.frame.height = 800;
+    mlx.frame.width = 600;
+    mlx.frame.ptr = mlx_new_image(mlx.mlx, 800, 600);
     mlx.game = &game;
+
     init_keys(&mlx);
     game.total_entities = 0;
 
-    game.images[HERO] = image_loader(&mlx, "res/collect_banner.xpm");
+    game.images[HERO] = image_loader(&mlx, "res/walk_anim.xpm");
     game.images[ENEM] = image_loader(&mlx, "res/oi.xpm");
 
     init_player(&game);
-    init_enemy(&game);
+    //init_enemy(&game);
 
     printf("Game is working...\n");
 

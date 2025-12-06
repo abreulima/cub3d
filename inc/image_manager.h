@@ -8,6 +8,10 @@ typedef struct  s_image_data
     void        *ptr;
     int         height;
     int         width;
+    int         *buffer;
+    int         bits_per_pixel;
+    int         line_length;
+    int         endian;
 }               t_image_data;
 
 typedef enum    e_images
