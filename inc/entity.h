@@ -15,6 +15,7 @@ typedef struct s_entity
 
 void	init_player(t_game *game);
 void	init_enemy(t_game *game);
+void	init_crosshair(t_game *game);
 int		add_entity(t_game *game, t_entity *entity);
 void	free_entities(t_game game);
 

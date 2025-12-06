@@ -18,6 +18,7 @@ typedef	enum	e_keys
 
 int		keydown(int keycode, t_mlx *mlx);
 int		keyup(int keycode, t_mlx *mlx);
+int		key_click_on_x(t_mlx *mlx);
 void	init_keys(t_mlx *mlx);
 
 

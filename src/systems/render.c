@@ -28,15 +28,14 @@ void render_system(t_mlx *mlx)
         if (k > 47)
             k = 0;
 
-        src_rect.x = 200 * k;
+        src_rect.x = 200;
         src_rect.y = 0;
         src_rect.w = 200;
         src_rect.h = 160;
 
         k++;
-
-        paint_anim_image(mlx, src, src_dst, src_rect);
-        //paint_image(mlx, src, rect);
+        //paint_anim_image(mlx, src, src_dst, src_rect);
+        paint_image(mlx, src, src_rect);
         i++;
 
     }

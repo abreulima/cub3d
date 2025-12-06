@@ -6,7 +6,6 @@
 #include "systems.h"
 #include "key_manager.h"
 
-
 int game_loop(void *data)
 {
     t_mlx *mlx;
@@ -35,9 +34,11 @@ int main()
     game.total_entities = 0;
 
     game.images[HERO] = image_loader(&mlx, "res/walk_anim.xpm");
+    game.images[CROSSHAIR] = image_loader(&mlx, "res/walk_anim.xpm");
     game.images[ENEM] = image_loader(&mlx, "res/oi.xpm");
 
     init_player(&game);
+    //init_crosshair(&game);
     //init_enemy(&game);
 
     printf("Game is working...\n");
@@ -45,6 +46,7 @@ int main()
     mlx_loop_hook(mlx.mlx, &game_loop, &mlx);
     mlx_hook(mlx.window, 2, 1L<<0, keydown, &mlx);
     mlx_hook(mlx.window, 3, 1L<<1, keyup, &mlx);
+    mlx_hook(mlx.window, 17, 0, key_click_on_x, &mlx);
     mlx_loop(mlx.mlx);
 
     free_entities(game);
