@@ -13,6 +13,36 @@ void init_keys(t_mlx *mlx)
     }
 }
 
+static void    setup_velocity(t_mlx *mlx, int *i)
+{
+    mlx->game->entities[*(i)]->velocity->vel_y = 0;
+    mlx->game->entities[*(i)]->velocity->vel_x = 0;
+    if (mlx->keys[W_KEY])
+    {
+        mlx->game->entities[*(i)]->velocity->vel_y = -2;
+        if (mlx->keys[SHIFT_KEY])
+            mlx->game->entities[*(i)]->velocity->vel_y -= 2;
+    }
+    if (mlx->keys[S_KEY])
+    {
+        mlx->game->entities[*(i)]->velocity->vel_y = 2;
+        if (mlx->keys[SHIFT_KEY])
+            mlx->game->entities[*(i)]->velocity->vel_y += 2;
+    }
+    if (mlx->keys[A_KEY])
+    {
+        mlx->game->entities[*(i)]->velocity->vel_x = -2;
+        if (mlx->keys[SHIFT_KEY])
+            mlx->game->entities[*(i)]->velocity->vel_x -= 2;
+    }
+    if (mlx->keys[D_KEY])
+    {
+        mlx->game->entities[*(i)]->velocity->vel_x = 2;
+        if (mlx->keys[SHIFT_KEY])
+            mlx->game->entities[*(i)]->velocity->vel_x += 2;
+    }
+}
+
 void keyboard_system(t_mlx *mlx)
 {
     int i;
@@ -21,26 +51,8 @@ void keyboard_system(t_mlx *mlx)
     t_entity *e = mlx->game->entities[i];
     while (i < mlx->game->total_entities)
     {
-        if (mlx->game->entities[i]->keyboard &&
-            mlx->game->entities[i]->velocity)
-        {
-            if (mlx->keys[W_KEY])
-                mlx->game->entities[i]->velocity->vel_y = 2;
-            if (!mlx->keys[W_KEY])
-                mlx->game->entities[i]->velocity->vel_y = 0;
-            if (mlx->keys[S_KEY])
-                mlx->game->entities[i]->velocity->vel_y = 2;
-            if (!mlx->keys[S_KEY])
-                mlx->game->entities[i]->velocity->vel_y = 0;
-            if (mlx->keys[A_KEY])
-                mlx->game->entities[i]->velocity->vel_x = 2;
-            if (!mlx->keys[A_KEY])
-                mlx->game->entities[i]->velocity->vel_x = 0;
-            if (mlx->keys[D_KEY])
-                mlx->game->entities[i]->velocity->vel_x = 2;
-            if (!mlx->keys[D_KEY])
-                mlx->game->entities[i]->velocity->vel_x = 0;
-        }
+        if (mlx->game->entities[i]->keyboard && mlx->game->entities[i]->velocity)
+            setup_velocity(mlx, &i);
         i++;
     }
 }

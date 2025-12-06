@@ -31,18 +31,11 @@ int main()
     game.total_entities = 0;
 
     game.images[HERO] = image_loader(&mlx, "res/collect_banner.xpm");
+    game.images[ENEM] = image_loader(&mlx, "res/oi.xpm");
 
-    t_entity player = {0};
-    player.keyboard = calloc(sizeof(t_comp_keyboard), 1);
-    player.transform = calloc(sizeof(t_comp_transform), 1);
-    player.sprite = calloc(sizeof(t_comp_sprite), 1);
-    player.velocity = calloc(sizeof(t_comp_velocity), 1);
-    player.sprite->sprite_data = &game.images[HERO];
-    add_entity(&game, &player);
+    init_player(&game);
+    init_enemy(&game);
 
-    t_entity enemy = {0};
-    enemy.transform = calloc(sizeof(t_comp_transform), 1);
-    add_entity(&game, &enemy);
     printf("Game is working...\n");
 
     mlx_loop_hook(mlx.mlx, &game_loop, &mlx);

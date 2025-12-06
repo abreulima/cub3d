@@ -14,13 +14,14 @@ typedef enum    e_images
 {
                 HERO,
                 MAP,
+                ENEM,
                 WALL_N,
                 WALL_W,
                 WALL_E,
                 WALL_S,
                 HUD_HP,
                 BT_PLAY,
-                BT_PLAY_HOVER,
+                BT_PLAY_HOVER
 }               t_images;
 
 t_image_data image_loader(t_mlx *mlx, char *path);
