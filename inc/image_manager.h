@@ -18,7 +18,8 @@ typedef enum    e_images
 {
                 HERO,
                 MAP,
-                ENEM,
+                ENEMY_01,
+                ENEMY_02,
                 CROSSHAIR,
                 WALL_N,
                 WALL_W,

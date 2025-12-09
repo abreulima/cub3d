@@ -3,7 +3,7 @@
 #include "renderer.h"
 #include "image_manager.h"
 
-#include <sys/time.h>
+       #include <sys/time.h>
 #include <time.h>
 
 # define MAGENTA 0xFF00FF
@@ -152,4 +152,5 @@ void clear_window(t_image_data *frame)
         }
         i++;
     }
+
 }

@@ -10,6 +10,11 @@ typedef struct s_comp_keyboard
 typedef struct      s_comp_sprite
 {
     t_image_data    *sprite_data;
+    bool            is_static;
+    bool            has_anim;
+    int             tile_size_x;
+    int             tile_size_y;
+    int             num_frames;
 }                   t_comp_sprite;
 
 typedef struct      s_comp_velocity

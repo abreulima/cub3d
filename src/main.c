@@ -3,8 +3,10 @@
 #include <unistd.h>
 #include <time.h>
 #include "game.h"
+#include "image_manager.h"
 #include "systems.h"
 #include "key_manager.h"
+
 
 int game_loop(void *data)
 {
@@ -34,12 +36,13 @@ int main()
     game.total_entities = 0;
 
     game.images[HERO] = image_loader(&mlx, "res/walk_anim.xpm");
-    game.images[CROSSHAIR] = image_loader(&mlx, "res/walk_anim.xpm");
-    game.images[ENEM] = image_loader(&mlx, "res/oi.xpm");
+    game.images[CROSSHAIR] = image_loader(&mlx, "res/crosshair_2.xpm");
+    game.images[ENEMY_01] = image_loader(&mlx, "res/oi.xpm");
+    game.images[ENEMY_02] = image_loader(&mlx, "res/enemy.xpm");
 
     init_player(&game);
-    //init_crosshair(&game);
-    //init_enemy(&game);
+    init_enemy(&game);
+    init_crosshair(&game);
 
     printf("Game is working...\n");
 

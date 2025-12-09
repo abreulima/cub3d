@@ -3,6 +3,8 @@
 static void	alloc_entity_crosshair(t_game *game, t_entity *crosshair)
 {
     crosshair->transform = calloc(sizeof(t_comp_transform), 1);
+    crosshair->transform->pos_x = (int)(800 / 2 - 32 / 2);
+    crosshair->transform->pos_y = (int)(600 / 2 - 32 / 2);
     crosshair->sprite = calloc(sizeof(t_comp_sprite), 1);
     crosshair->sprite->sprite_data = &game->images[CROSSHAIR];
 }
