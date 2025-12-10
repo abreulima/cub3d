@@ -205,8 +205,8 @@ void paint_image_rotation(t_mlx *mlx, t_image_data *src, t_rect rect, int angle_
                 angle = 0;
 
             // https://stackoverflow.com/questions/2259476/rotating-a-point-about-another-point-2d
-            // new_x = cos(angle) * x - sin(angle) * y;
-            // new_y = sin(angle) * x + cos(angle) * y;
+             //new_x = cos(angle) * x - sin(angle) * y;
+             //new_y = sin(angle) * x + cos(angle) * y;
 
             // p'x = cos(theta) * (px-ox) - sin(theta) * (py-oy) + ox
             // p'y = sin(theta) * (px-ox) + cos(theta) * (py-oy) + oy
@@ -216,11 +216,11 @@ void paint_image_rotation(t_mlx *mlx, t_image_data *src, t_rect rect, int angle_
             new_x = cos(angle) * (x - pivot_x) - sin(angle) * (y - pivot_y) + pivot_x;
             new_y = sin(angle) * (x - pivot_x) + cos(angle) * (y - pivot_y) + pivot_y;
 
-            //if (new_x > rect.w || new_y > rect.h || new_x + rect.x < 0 || new_y + rect.y < 0)
-            {
-            //    x++;
-            //    continue;
-            }
+            // if (new_x > rect.w || new_y > rect.h || new_x + rect.x < 0 || new_y + rect.y < 0)
+            // {
+            //     x++;
+            //     continue;
+            // }
 
             //new_x = x;
             //new_y = y;
