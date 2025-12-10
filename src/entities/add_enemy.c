@@ -4,6 +4,8 @@
 static void	alloc_entity_enemy(t_game *game, t_entity *enemy)
 {
     enemy->transform = calloc(sizeof(t_comp_transform), 1);
+    enemy->transform->pos_x = 400;
+    enemy->transform->pos_y = 300;
 
     enemy->sprite = calloc(sizeof(t_comp_sprite), 1);
     enemy->sprite->has_anim = false;

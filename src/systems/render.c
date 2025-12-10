@@ -39,7 +39,7 @@ void render_system(t_mlx *mlx)
             k++;
         }
         else
-            paint_image(mlx, src, dst_rect);
+            paint_image_rotation(mlx, src, dst_rect, 0);
         i++;
 
     }

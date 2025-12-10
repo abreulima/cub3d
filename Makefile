@@ -15,4 +15,4 @@ SRCS += src/systems/render.c
 
 
 all: $(SRCS)
-	cc $(LDFLAGS) $^ -O3 -Lminilibx-linux -lmlx_Linux -lz -lXext -lm -lX11 -lSDL2 -g -o $(NAME)
+	cc $(LDFLAGS) $^ -O3 -Lminilibx-linux -lmlx_Linux -lz -lXext -lm -lX11 -g -o $(NAME)

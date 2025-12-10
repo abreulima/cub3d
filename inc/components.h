@@ -7,6 +7,10 @@ typedef struct s_comp_keyboard
 {
 }   t_comp_keyboard;
 
+typedef struct s_comp_map
+{
+}   t_comp_map;
+
 typedef struct      s_comp_sprite
 {
     t_image_data    *sprite_data;
