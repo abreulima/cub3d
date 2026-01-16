@@ -32,5 +32,6 @@ typedef enum    e_images
 }               t_images;
 
 t_image_data image_loader(t_mlx *mlx, char *path);
+void        *create_img_from_rect(t_mlx *mlx, void *source, int x, int y, int width, int height);
 
 #endif

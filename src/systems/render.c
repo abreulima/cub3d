@@ -11,7 +11,6 @@ void render_system(t_mlx *mlx)
     t_rect          src_rect;
     t_image_data    *src;
 
-    clear_window(&mlx->frame);
     i = 0;
     while (i < mlx->game->total_entities)
     {
@@ -43,6 +42,4 @@ void render_system(t_mlx *mlx)
         i++;
 
     }
-    mlx_put_image_to_window(mlx->mlx, mlx->window, mlx->frame.ptr, 0, 0);
-    usleep(16000);
 }

@@ -34,4 +34,9 @@ typedef struct s_comp_transform
     int         rot;
 }               t_comp_transform;
 
+typedef struct s_comp_text
+{
+    char *txt;
+}               t_comp_text;
+
 #endif

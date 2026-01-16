@@ -13,6 +13,7 @@ SRCS += src/entities/add_crosshair.c
 SRCS += src/systems/keyboard.c
 SRCS += src/systems/movement.c
 SRCS += src/systems/render.c
+SRCS += src/systems/text.c
 
 
 all: $(SRCS)

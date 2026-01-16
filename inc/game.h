@@ -14,6 +14,7 @@ typedef struct      s_game
     int             total_entities;
     t_entity        *entities[1024];
     t_image_data    images[256];
+    t_image_data    font[256];
 }                   t_game;
 
 typedef struct      s_scenes
