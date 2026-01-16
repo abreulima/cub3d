@@ -27,7 +27,8 @@ typedef enum    e_images
                 WALL_S,
                 HUD_HP,
                 BT_PLAY,
-                BT_PLAY_HOVER
+                BT_PLAY_HOVER,
+                FONT_ALP
 }               t_images;
 
 t_image_data image_loader(t_mlx *mlx, char *path);

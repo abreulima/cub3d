@@ -7,7 +7,6 @@
 #include "systems.h"
 #include "key_manager.h"
 
-
 int game_loop(void *data)
 {
     t_mlx *mlx;
@@ -39,7 +38,9 @@ int main()
     game.images[CROSSHAIR] = image_loader(&mlx, "res/crosshair_2.xpm");
     game.images[ENEMY_01] = image_loader(&mlx, "res/oi.xpm");
     game.images[ENEMY_02] = image_loader(&mlx, "res/enemy.xpm");
+    game.images[FONT_ALP] = image_loader(&mlx, "res/font_to_game.xpm");
 
+    init_input(&game);
     init_player(&game);
     init_enemy(&game);
     init_crosshair(&game);

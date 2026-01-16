@@ -6,6 +6,7 @@ SRCS += src/image_manager.c
 SRCS += src/key_manager.c
 SRCS += src/renderer/renderer.c
 SRCS += src/entities/entity_manager.c
+SRCS += src/entities/add_input.c
 SRCS += src/entities/add_player.c
 SRCS += src/entities/add_enemy.c
 SRCS += src/entities/add_crosshair.c

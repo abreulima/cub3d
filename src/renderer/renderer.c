@@ -2,12 +2,10 @@
 #include "game.h"
 #include "renderer.h"
 #include "image_manager.h"
-
-       #include <sys/time.h>
+#include <sys/time.h>
 #include <time.h>
 
 # define MAGENTA 0xFF00FF
-
 #include <math.h>
 
 void paint_pixel(int *buff, int line_len, int x, int y, int color)
@@ -145,7 +143,7 @@ void clear_window(t_image_data *frame)
         j = 0;
         while (j < frame->width)
         {
-            paint_pixel(buffer, frame->line_length,i , j, 0);
+            paint_pixel(buffer, frame->line_length,i , j, 0xffffff);
             j++;
         }
         i++;
@@ -195,13 +193,13 @@ void paint_image_rotation(t_mlx *mlx, t_image_data *src, t_rect rect, int angle_
                 x++;
                 continue;
             }
-            angle_rot = 180 * (M_PI / 180.0);
+            angle_rot = 180 * (3.14 / 180.0);
             //angle_rot++;
             //if (angle_rot > 90)
             //    angle_rot = 0;
             //printf()
             angle += 0.000001f;
-            if (angle > 2 * M_PI)
+            if (angle > 2 * 3.14)
                 angle = 0;
 
             // https://stackoverflow.com/questions/2259476/rotating-a-point-about-another-point-2d

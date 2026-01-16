@@ -56,3 +56,4 @@ void keyboard_system(t_mlx *mlx)
         i++;
     }
 }
+

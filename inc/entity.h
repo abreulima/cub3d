@@ -13,6 +13,7 @@ typedef struct s_entity
     t_comp_sprite       *sprite;
 }   t_entity;
 
+void	init_input(t_game *game);
 void	init_player(t_game *game);
 void	init_enemy(t_game *game);
 void	init_crosshair(t_game *game);
