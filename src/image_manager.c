@@ -19,3 +19,35 @@ t_image_data image_loader(t_mlx *mlx, char *path)
     #endif
     return (data);
 }
+
+
+void *create_img_from_rect(t_game *game, void *source, int x, int y, int width, int height)
+{
+    int *src_buffer;
+    int	*dst_buffer;
+    void *target_img;
+    t_data src_data;
+    t_data dst_data;
+    int i;
+    int j;
+	
+    src_buffer = (int *)mlx_get_data_addr(source, &src_data.bits_per_pixel, &src_data.line_length, &src_data.endian);
+
+    target_img = mlx_new_image(game->mlx, width, height);
+    dst_buffer = (int *)mlx_get_data_addr(target_img, &dst_data.bits_per_pixel, &dst_data.line_length, &dst_data.endian);
+    dst_data.line_length /= 4;
+
+    i = 0;
+	while (i < width)
+	{
+		j = 0;
+		while (j < height)
+		{
+			dst_buffer[(i * dst_data.line_length) + j] = src_buffer[((i + y) * src_data.line_length / 4) + j + x];
+			j++;
+		}
+		i++;
+	}
+
+    return ((void *)target_img);
+}
