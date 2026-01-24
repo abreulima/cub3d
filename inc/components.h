@@ -39,4 +39,12 @@ typedef struct s_comp_text
     char *txt;
 }               t_comp_text;
 
+typedef struct s_comp_text_input
+{
+    int  size;
+    char *txt;
+}               t_comp_text_input;
+
+
+
 #endif

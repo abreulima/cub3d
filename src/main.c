@@ -18,8 +18,8 @@ int game_loop(void *data)
     movement_system(mlx);
     render_system(mlx);
     text_system(mlx);
-       mlx_put_image_to_window(mlx->mlx, mlx->window, mlx->frame.ptr, 0, 0);
-
+    input_system(mlx);
+    mlx_put_image_to_window(mlx->mlx, mlx->window, mlx->frame.ptr, 0, 0);
     usleep(16000);
     return (0);
 }
@@ -44,21 +44,30 @@ int main()
     game.images[CROSSHAIR] = image_loader(&mlx, "res/crosshair_2.xpm");
     game.images[ENEMY_01] = image_loader(&mlx, "res/oi.xpm");
     game.images[ENEMY_02] = image_loader(&mlx, "res/enemy.xpm");
-    game.images[FONT_ALP] = image_loader(&mlx, "res/font_to_game.xpm");
+    game.images[FONT_ALP] = image_loader(&mlx, "res/def_font.xpm");
 
-    
     int i = 0;
-    while(i < 26) 
+    int j = 0;
+    int y_offset[6] = {1, 18, 35, 52, 69, 86};
+    while(i < 96) 
     {
-        game.font[i].ptr = create_img_from_rect(&mlx, game.images[FONT_ALP].ptr, i * 10, 0, 10, 18);
-        game.font[i].width = 10;
-        game.font[i].height = 18;
+
+        game.font[i].ptr = create_img_from_rect(&mlx, game.images[FONT_ALP].ptr, (9 * i) + 1, 17 * i + 1, 8, 16);
+        game.font[i].width = 8;
+        game.font[i].height = 16;
         i++;
     }
+    //while(i < 52) 
+    //{
+    //    game.font[i].ptr = create_img_from_rect(&mlx, game.images[FONT_ALP].ptr, i * 10, 10, 10, 18);
+    //    game.font[i].width = 10;
+    //    game.font[i].height = 18;
+    //    i++;
+    //}
 
     init_input(&game);
     init_player(&game);
-    init_enemy(&game);
+    //init_enemy(&game);
     init_crosshair(&game);
 
     printf("Game is working...\n");

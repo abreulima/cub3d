@@ -12,6 +12,7 @@ typedef struct s_entity
 	t_comp_velocity		*velocity;
     t_comp_sprite       *sprite;
     t_comp_text         *text;
+    t_comp_text_input   *text_input;
 }   t_entity;
 
 void	init_input(t_game *game);

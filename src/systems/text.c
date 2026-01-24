@@ -1,6 +1,7 @@
 #include <unistd.h>
 #include "game.h"
 #include "renderer.h"
+#include "key_manager.h"
 #include <string.h>
 
 void text_system(t_mlx *mlx)
@@ -22,13 +23,13 @@ void text_system(t_mlx *mlx)
 		for(int c = 0; c < strlen(mlx->game->entities[i]->text->txt); c++)
 		{
 			char letter = mlx->game->entities[i]->text->txt[c];
-			src = &mlx->game->font[letter - 65];
-	
-			dst_rect.x = (int)mlx->game->entities[i]->transform->pos_x + 12*c;
+			//src = &mlx->game->font[letter - 65];
+			src = &mlx->game->font[0];
+			dst_rect.x = (int)mlx->game->entities[i]->transform->pos_x + 12 * c;
 			dst_rect.y = (int)mlx->game->entities[i]->transform->pos_y;
-			dst_rect.h = 18;
-			dst_rect.w = 10;
-			paint_image(mlx, src, dst_rect);
+			dst_rect.h = 16;
+			dst_rect.w = 8;
+            paint_image(mlx, src, dst_rect);
 		}
 		i++;
     }
