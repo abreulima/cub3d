@@ -9,10 +9,10 @@ void addChar(char *s, char c) {
 
   	// Move pointer to the end
     while (*s++);
-  
+
     // Append the new character
     *(s - 1) = c;
-  
+
     // Add null terminator to mark new end
     *s = '\0';
 }
@@ -36,11 +36,11 @@ void input_system(t_mlx *mlx)
             i++;
             continue ;
         }
-		for(int j = 65; j < 122; j++)
+		for(int j = 32; j < 126; j++)
 		{
 			if (mlx->keys[j])
 			{
-				addChar(mlx->game->entities[i]->text_input->txt, j);		
+				addChar(mlx->game->entities[i]->text_input->txt, j);
 				keyup(j, mlx);
 
 			}
@@ -48,8 +48,9 @@ void input_system(t_mlx *mlx)
 		for(int c = 0; c < strlen(mlx->game->entities[i]->text_input->txt); c++)
 		{
 			char letter = mlx->game->entities[i]->text_input->txt[c];
-			src = &mlx->game->font[1];
-			dst_rect.x = (int)mlx->game->entities[i]->transform->pos_x + 12 * c;
+			//printf("letter: %d", letter);
+			src = &mlx->game->font[letter - 32];
+			dst_rect.x = (int)mlx->game->entities[i]->transform->pos_x + 9 * c;
 			dst_rect.y = (int)mlx->game->entities[i]->transform->pos_y;
 			dst_rect.h = 16;
 			dst_rect.w = 8;

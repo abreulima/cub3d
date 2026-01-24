@@ -2,13 +2,13 @@
 #include "image_manager.h"
 #include <string.h>
 
-static void alloc_entity_input(t_game *game, t_entity *input) 
+static void alloc_entity_input(t_game *game, t_entity *input)
 {
 	input->transform = calloc(sizeof(t_comp_transform), 1);
 	input->text_input = calloc(sizeof(t_comp_text_input), 1);
 	input->transform->pos_x = 200;
 	input->transform->pos_y = 200;
-	input->text_input->txt = strdup("! !");
+	input->text_input->txt = strdup("AAAA");
 };
 
 void	init_input(t_game *game)

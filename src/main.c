@@ -49,15 +49,26 @@ int main()
     int i = 0;
     int j = 0;
     int y_offset[6] = {1, 18, 35, 52, 69, 86};
-    while(i < 96) 
-    {
 
-        game.font[i].ptr = create_img_from_rect(&mlx, game.images[FONT_ALP].ptr, (9 * i) + 1, 17 * i + 1, 8, 16);
-        game.font[i].width = 8;
-        game.font[i].height = 16;
+
+    for (int i = 0; i < 16; i++)
+    {
+        for (int j = 0; j < 6; j++)
+        {
+            game.font[i + j * 16].ptr = create_img_from_rect(&mlx, game.images[FONT_ALP].ptr, (9 * i) + 1, 17 * j + 1, 8, 16);
+            game.font[i + j * 16].width = 8;
+            game.font[i + j * 16].height = 16;
+        }
+    }
+
+    while(i < 96)
+    {
+        //game.font[i].ptr = create_img_from_rect(&mlx, game.images[FONT_ALP].ptr, (9 * i) + 1, 1, 8, 16);
+        //game.font[i].ptr = create_img_from_rect(&mlx, game.images[FONT_ALP].ptr, (9 * i) + 1, 17 * (i / 16) + 1, 8, 16);
+        printf("i:%d \t %d %d %d %d\n", i, (9 * i) + 1, 17 * ((int)(i / 16)) + 1, 8, 16);
         i++;
     }
-    //while(i < 52) 
+    //while(i < 52)
     //{
     //    game.font[i].ptr = create_img_from_rect(&mlx, game.images[FONT_ALP].ptr, i * 10, 10, 10, 18);
     //    game.font[i].width = 10;
